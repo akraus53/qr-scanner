@@ -95,6 +95,24 @@
           100
         );
         console.log(result.data);
+
+        // any character that is not a word character or whitespace
+        const regex = /([0-9])+\d/g;
+        matches = result.data.match(regex);
+
+        secondpart = match % 100;
+        firstpart = Math.floor(match / 100);
+
+        let numArr = firstpart.toString().split("");
+        let crosssum = numArr.reduce(function (a, b) {
+          return parseInt(a) + parseInt(b);
+        }, 0);
+
+        if (!isnull(matches) && (crosssum = secondpart)) {
+          document.body.style.backgroundColor = "green";
+        } else {
+          document.body.style.backgroundColor = "red";
+        }
       }
 
       // ####### Web Cam Scanning #######
@@ -106,6 +124,7 @@
           onDecodeError: (error) => {
             camQrResult.textContent = error;
             camQrResult.style.color = "inherit";
+            document.body.style.backgroundColor = "gray";
           },
           highlightScanRegion: true,
           highlightCodeOutline: true,
