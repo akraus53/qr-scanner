@@ -99,17 +99,20 @@
         // any character that is not a word character or whitespace
         const regex = /([0-9])+\d/g;
         let matches = result.data.match(regex);
+        if (not(isnull(matches))) {
+          let secondpart = matches[0] % 100;
+          let firstpart = Math.floor(matches[0] / 100);
 
-        let secondpart = match % 100;
-        let firstpart = Math.floor(match / 100);
+          let numArr = firstpart.toString().split("");
+          let crosssum = numArr.reduce(function (a, b) {
+            return parseInt(a) + parseInt(b);
+          }, 0);
 
-        let numArr = firstpart.toString().split("");
-        let crosssum = numArr.reduce(function (a, b) {
-          return parseInt(a) + parseInt(b);
-        }, 0);
-
-        if (!isnull(matches) && (crosssum = secondpart)) {
-          document.body.style.backgroundColor = "green";
+          if ((crosssum = secondpart)) {
+            document.body.style.backgroundColor = "green";
+          } else {
+            document.body.style.backgroundColor = "red";
+          }
         } else {
           document.body.style.backgroundColor = "red";
         }
