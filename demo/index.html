@@ -84,6 +84,10 @@
       const fileSelector = document.getElementById("file-selector");
       const fileQrResult = document.getElementById("file-qr-result");
 
+      videoContainer.className = 'default-style';
+      scanner._updateOverlay(); 
+
+
       function setResult(label, result) {
         console.log(result.data);
         label.textContent = result.data;
@@ -145,7 +149,7 @@
       document
         .getElementById("scan-region-highlight-style-select")
         .addEventListener("change", (e) => {
-          videoContainer.className = e.target.value;
+          videoContainer.className = 'default-style';
           scanner._updateOverlay(); // reposition the highlight because style 2 sets position: relative
         });
 
