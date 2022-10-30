@@ -143,9 +143,9 @@
       );
 
       // for debugging
-      window.scanner = scanner;
+      //window.scanner = scanner;
 
-      document
+      /*document
         .getElementById("scan-region-highlight-style-select")
         .addEventListener("change", (e) => {
           videoContainer.className = "default-style";
@@ -169,7 +169,7 @@
 
       camList.addEventListener("change", (event) => {
         scanner.setCamera(event.target.value).then(updateFlashAvailability);
-      });
+      });*/
 
       flashToggle.addEventListener("click", () => {
         scanner
@@ -178,17 +178,17 @@
             () => (flashState.textContent = scanner.isFlashOn() ? "on" : "off")
           );
       });
-
+    /*
       document.getElementById("start-button").addEventListener("click", () => {
         scanner.start();
       });
 
       document.getElementById("stop-button").addEventListener("click", () => {
         scanner.stop();
-      });
+      });*/
 
       // ####### File Scanning #######
-
+/*
       fileSelector.addEventListener("change", (event) => {
         const file = fileSelector.files[0];
         if (!file) {
@@ -199,7 +199,7 @@
           .catch((e) =>
             setResult(fileQrResult, { data: e || "No QR code found." })
           );
-      });
+      });*/
     </script>
 
     <style>
