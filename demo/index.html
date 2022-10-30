@@ -117,7 +117,7 @@
 
       const updateFlashAvailability = () => {
         scanner.hasFlash().then((hasFlash) => {
-          camHasFlash.textContent = hasFlash;
+          //camHasFlash.textContent = hasFlash;
           flashToggle.style.display = hasFlash ? "inline-block" : "none";
         });
       };
@@ -138,9 +138,9 @@
         );
       });
 
-      QrScanner.hasCamera().then(
-        (hasCamera) => (camHasCamera.textContent = hasCamera)
-      );
+      //QrScanner.hasCamera().then(
+      // (hasCamera) => (camHasCamera.textContent = hasCamera)
+      //);
 
       // for debugging
       //window.scanner = scanner;
@@ -178,7 +178,7 @@
             () => (flashState.textContent = scanner.isFlashOn() ? "on" : "off")
           );
       });
-    /*
+      /*
       document.getElementById("start-button").addEventListener("click", () => {
         scanner.start();
       });
@@ -188,7 +188,7 @@
       });*/
 
       // ####### File Scanning #######
-/*
+      /*
       fileSelector.addEventListener("change", (event) => {
         const file = fileSelector.files[0];
         if (!file) {
@@ -201,51 +201,5 @@
           );
       });*/
     </script>
-
-    <style>
-      div {
-        margin-bottom: 16px;
-      }
-
-      #video-container {
-        line-height: 0;
-      }
-
-      #video-container.example-style-1 .scan-region-highlight-svg,
-      #video-container.example-style-1 .code-outline-highlight {
-        stroke: #64a2f3 !important;
-      }
-
-      #video-container.example-style-2 {
-        position: relative;
-        width: max-content;
-        height: max-content;
-        overflow: hidden;
-      }
-      #video-container.example-style-2 .scan-region-highlight {
-        border-radius: 30px;
-        outline: rgba(0, 0, 0, 0.25) solid 50vmax;
-      }
-      #video-container.example-style-2 .scan-region-highlight-svg {
-        display: none;
-      }
-      #video-container.example-style-2 .code-outline-highlight {
-        stroke: rgba(255, 255, 255, 0.5) !important;
-        stroke-width: 15 !important;
-        stroke-dasharray: none !important;
-      }
-
-      #flash-toggle {
-        display: none;
-      }
-
-      hr {
-        margin-top: 32px;
-      }
-      input[type="file"] {
-        display: block;
-        margin-bottom: 16px;
-      }
-    </style>
   </body>
 </html>
