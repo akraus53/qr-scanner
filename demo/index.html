@@ -98,10 +98,10 @@
 
         // any character that is not a word character or whitespace
         const regex = /([0-9])+\d/g;
-        matches = result.data.match(regex);
+        let matches = result.data.match(regex);
 
-        secondpart = match % 100;
-        firstpart = Math.floor(match / 100);
+        let secondpart = match % 100;
+        let firstpart = Math.floor(match / 100);
 
         let numArr = firstpart.toString().split("");
         let crosssum = numArr.reduce(function (a, b) {
