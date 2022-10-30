@@ -102,13 +102,13 @@
         if (matches) {
           let secondpart = matches[0] % 100;
           let firstpart = Math.floor(matches[0] / 100);
-          firstpart = firstpart * firstpart
+          firstpart = firstpart * firstpart;
           let numArr = firstpart.toString().split("");
           let crosssum = numArr.reduce(function (a, b) {
             return parseInt(a) + parseInt(b);
           }, 0);
 
-          if ((crosssum == secondpart)) {
+          if (crosssum == secondpart) {
             document.body.style.backgroundColor = "green";
           } else {
             document.body.style.backgroundColor = "red";
