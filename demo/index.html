@@ -99,7 +99,7 @@
         // any character that is not a word character or whitespace
         const regex = /([0-9])+\d/g;
         let matches = result.data.match(regex);
-        if (not(isnull(matches))) {
+        if (!isnull(matches)) {
           let secondpart = matches[0] % 100;
           let firstpart = Math.floor(matches[0] / 100);
           firstpart = firstpart * firstpart
