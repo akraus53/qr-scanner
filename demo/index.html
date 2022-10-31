@@ -99,8 +99,8 @@
         // any character that is not a word character or whitespace
         const regex = /([0-9]){6}/g;
         let matches = result.data.match(regex);
-        if (matches && matches[1]) {
-          let secondpart = matches[1] % 100;
+        if (matches) {
+          let secondpart = matches[0] % 100;
           let firstpart = Math.floor(matches[1] / 100);
           firstpart = firstpart * firstpart;
           let numArr = firstpart.toString().split("");
