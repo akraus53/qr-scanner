@@ -83,6 +83,8 @@
       );
       const fileSelector = document.getElementById("file-selector");
       const fileQrResult = document.getElementById("file-qr-result");
+      let nein = new Audio("Nein.ogg");
+
 
       function setResult(label, result) {
         console.log(result.data);
@@ -114,13 +116,11 @@
             //snd.play();
           } else {
             document.body.style.backgroundColor = "red";
-            let snd = new Audio("Nein.ogg");
-            snd.play();
+            nein.play();
           }
         } else {
           document.body.style.backgroundColor = "red";
-          let snd = new Audio("Nein.ogg");
-          snd.play();
+          nein.play();
         }
       }
 
