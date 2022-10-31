@@ -188,10 +188,10 @@
         .addEventListener("change", (event) => {
           scanner.setInversionMode(event.target.value);
         });
-
+      */
       camList.addEventListener("change", (event) => {
         scanner.setCamera(event.target.value).then(updateFlashAvailability);
-      });*/
+      });
 
       flashToggle.addEventListener("click", () => {
         scanner
